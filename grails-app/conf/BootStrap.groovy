@@ -1,10 +1,12 @@
 import com.tekdays.*
+import grails.util.GrailsUtil
 
 class BootStrap {
 
     def init = { servletContext ->
 
-	 	if ( !TekEvent.get( 1 ) ) {
+	 	if ( GrailsUtil.environment == 'development' ) {
+	 	//if ( !TekEvent.get( 1 ) ) {
 
 		new TekUser( 
 			fullName:'John Doe',
