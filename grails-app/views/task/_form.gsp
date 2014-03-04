@@ -8,6 +8,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="title" required="" value="${taskInstance?.title}"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: taskInstance, field: 'notes', 'error')} ">
@@ -16,6 +17,7 @@
 		
 	</label>
 	<g:textArea name="notes" cols="40" rows="5" maxlength="5000" value="${taskInstance?.notes}"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: taskInstance, field: 'assignedTo', 'error')} ">
@@ -24,6 +26,7 @@
 		
 	</label>
 	<g:select id="assignedTo" name="assignedTo.id" from="${com.tekdays.TekUser.list()}" optionKey="id" value="${taskInstance?.assignedTo?.id}" class="many-to-one" noSelection="['null': '']"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: taskInstance, field: 'dueDate', 'error')} ">
@@ -32,6 +35,7 @@
 		
 	</label>
 	<g:datePicker name="dueDate" precision="day"  value="${taskInstance?.dueDate}" default="none" noSelection="['': '']" />
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: taskInstance, field: 'event', 'error')} required">
@@ -40,5 +44,6 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="event" name="event.id" from="${com.tekdays.TekEvent.list()}" optionKey="id" required="" value="${taskInstance?.event?.id}" class="many-to-one"/>
+
 </div>
 

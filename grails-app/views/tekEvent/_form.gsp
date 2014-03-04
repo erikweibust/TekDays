@@ -8,6 +8,7 @@
 		
 	</label>
 	<g:textField name="name" value="${tekEventInstance?.name}"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: tekEventInstance, field: 'city', 'error')} ">
@@ -16,6 +17,7 @@
 		
 	</label>
 	<g:textField name="city" value="${tekEventInstance?.city}"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: tekEventInstance, field: 'description', 'error')} ">
@@ -24,6 +26,7 @@
 		
 	</label>
 	<g:textArea name="description" cols="40" rows="5" maxlength="5000" value="${tekEventInstance?.description}"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: tekEventInstance, field: 'organizer', 'error')} required">
@@ -32,6 +35,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="organizer" name="organizer.id" from="${com.tekdays.TekUser.list()}" optionKey="id" required="" value="${tekEventInstance?.organizer?.id}" class="many-to-one"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: tekEventInstance, field: 'venue', 'error')} ">
@@ -40,6 +44,7 @@
 		
 	</label>
 	<g:textField name="venue" value="${tekEventInstance?.venue}"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: tekEventInstance, field: 'startDate', 'error')} required">
@@ -48,6 +53,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:datePicker name="startDate" precision="day"  value="${tekEventInstance?.startDate}"  />
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: tekEventInstance, field: 'endDate', 'error')} required">
@@ -56,6 +62,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:datePicker name="endDate" precision="day"  value="${tekEventInstance?.endDate}"  />
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: tekEventInstance, field: 'volunteers', 'error')} ">
@@ -64,6 +71,7 @@
 		
 	</label>
 	<g:select name="volunteers" from="${com.tekdays.TekUser.list()}" multiple="multiple" optionKey="id" size="5" value="${tekEventInstance?.volunteers*.id}" class="many-to-many"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: tekEventInstance, field: 'sponsorships', 'error')} ">
@@ -80,6 +88,7 @@
 <g:link controller="sponsorship" action="create" params="['tekEvent.id': tekEventInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'sponsorship.label', default: 'Sponsorship')])}</g:link>
 </li>
 </ul>
+
 
 </div>
 
@@ -98,6 +107,7 @@
 </li>
 </ul>
 
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: tekEventInstance, field: 'messages', 'error')} ">
@@ -115,6 +125,7 @@
 </li>
 </ul>
 
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: tekEventInstance, field: 'respondents', 'error')} ">
@@ -123,5 +134,6 @@
 		
 	</label>
 	
+
 </div>
 

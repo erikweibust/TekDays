@@ -38,7 +38,7 @@ class TekEventController {
         tekEventInstance.save flush:true
 
         request.withFormat {
-            form {
+            form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'tekEventInstance.label', default: 'TekEvent'), tekEventInstance.id])
                 redirect tekEventInstance
             }
@@ -65,7 +65,7 @@ class TekEventController {
         tekEventInstance.save flush:true
 
         request.withFormat {
-            form {
+            form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'TekEvent.label', default: 'TekEvent'), tekEventInstance.id])
                 redirect tekEventInstance
             }
@@ -84,7 +84,7 @@ class TekEventController {
         tekEventInstance.delete flush:true
 
         request.withFormat {
-            form {
+            form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'TekEvent.label', default: 'TekEvent'), tekEventInstance.id])
                 redirect action:"index", method:"GET"
             }
@@ -94,7 +94,7 @@ class TekEventController {
 
     protected void notFound() {
         request.withFormat {
-            form {
+            form multipartForm {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'tekEventInstance.label', default: 'TekEvent'), params.id])
                 redirect action: "index", method: "GET"
             }

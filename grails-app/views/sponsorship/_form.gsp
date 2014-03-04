@@ -8,6 +8,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="event" name="event.id" from="${com.tekdays.TekEvent.list()}" optionKey="id" required="" value="${sponsorshipInstance?.event?.id}" class="many-to-one"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: sponsorshipInstance, field: 'sponsor', 'error')} required">
@@ -16,6 +17,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="sponsor" name="sponsor.id" from="${com.tekdays.Sponsor.list()}" optionKey="id" required="" value="${sponsorshipInstance?.sponsor?.id}" class="many-to-one"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: sponsorshipInstance, field: 'contributionType', 'error')} ">
@@ -24,6 +26,7 @@
 		
 	</label>
 	<g:select name="contributionType" from="${sponsorshipInstance.constraints.contributionType.inList}" value="${sponsorshipInstance?.contributionType}" valueMessagePrefix="sponsorship.contributionType" noSelection="['': '']"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: sponsorshipInstance, field: 'description', 'error')} ">
@@ -32,6 +35,7 @@
 		
 	</label>
 	<g:textField name="description" value="${sponsorshipInstance?.description}"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: sponsorshipInstance, field: 'notes', 'error')} ">
@@ -40,5 +44,6 @@
 		
 	</label>
 	<g:textArea name="notes" cols="40" rows="5" maxlength="5000" value="${sponsorshipInstance?.notes}"/>
+
 </div>
 

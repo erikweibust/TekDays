@@ -38,7 +38,7 @@ class TaskController {
         taskInstance.save flush:true
 
         request.withFormat {
-            form {
+            form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'taskInstance.label', default: 'Task'), taskInstance.id])
                 redirect taskInstance
             }
@@ -65,7 +65,7 @@ class TaskController {
         taskInstance.save flush:true
 
         request.withFormat {
-            form {
+            form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'Task.label', default: 'Task'), taskInstance.id])
                 redirect taskInstance
             }
@@ -84,7 +84,7 @@ class TaskController {
         taskInstance.delete flush:true
 
         request.withFormat {
-            form {
+            form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'Task.label', default: 'Task'), taskInstance.id])
                 redirect action:"index", method:"GET"
             }
@@ -94,7 +94,7 @@ class TaskController {
 
     protected void notFound() {
         request.withFormat {
-            form {
+            form multipartForm {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'taskInstance.label', default: 'Task'), params.id])
                 redirect action: "index", method: "GET"
             }

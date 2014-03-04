@@ -38,7 +38,7 @@ class SponsorController {
         sponsorInstance.save flush:true
 
         request.withFormat {
-            form {
+            form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'sponsorInstance.label', default: 'Sponsor'), sponsorInstance.id])
                 redirect sponsorInstance
             }
@@ -65,7 +65,7 @@ class SponsorController {
         sponsorInstance.save flush:true
 
         request.withFormat {
-            form {
+            form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'Sponsor.label', default: 'Sponsor'), sponsorInstance.id])
                 redirect sponsorInstance
             }
@@ -84,7 +84,7 @@ class SponsorController {
         sponsorInstance.delete flush:true
 
         request.withFormat {
-            form {
+            form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'Sponsor.label', default: 'Sponsor'), sponsorInstance.id])
                 redirect action:"index", method:"GET"
             }
@@ -94,7 +94,7 @@ class SponsorController {
 
     protected void notFound() {
         request.withFormat {
-            form {
+            form multipartForm {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'sponsorInstance.label', default: 'Sponsor'), params.id])
                 redirect action: "index", method: "GET"
             }

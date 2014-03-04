@@ -38,7 +38,7 @@ class TekUserController {
         tekUserInstance.save flush:true
 
         request.withFormat {
-            form {
+            form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'tekUserInstance.label', default: 'TekUser'), tekUserInstance.id])
                 redirect tekUserInstance
             }
@@ -65,7 +65,7 @@ class TekUserController {
         tekUserInstance.save flush:true
 
         request.withFormat {
-            form {
+            form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'TekUser.label', default: 'TekUser'), tekUserInstance.id])
                 redirect tekUserInstance
             }
@@ -84,7 +84,7 @@ class TekUserController {
         tekUserInstance.delete flush:true
 
         request.withFormat {
-            form {
+            form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'TekUser.label', default: 'TekUser'), tekUserInstance.id])
                 redirect action:"index", method:"GET"
             }
@@ -94,7 +94,7 @@ class TekUserController {
 
     protected void notFound() {
         request.withFormat {
-            form {
+            form multipartForm {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'tekUserInstance.label', default: 'TekUser'), params.id])
                 redirect action: "index", method: "GET"
             }

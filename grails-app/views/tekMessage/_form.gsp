@@ -8,6 +8,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="subject" required="" value="${tekMessageInstance?.subject}"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: tekMessageInstance, field: 'content', 'error')} required">
@@ -16,6 +17,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textArea name="content" cols="40" rows="5" maxlength="2000" required="" value="${tekMessageInstance?.content}"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: tekMessageInstance, field: 'parent', 'error')} ">
@@ -24,6 +26,7 @@
 		
 	</label>
 	<g:select id="parent" name="parent.id" from="${com.tekdays.TekMessage.list()}" optionKey="id" value="${tekMessageInstance?.parent?.id}" class="many-to-one" noSelection="['null': '']"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: tekMessageInstance, field: 'author', 'error')} required">
@@ -32,6 +35,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="author" name="author.id" from="${com.tekdays.TekUser.list()}" optionKey="id" required="" value="${tekMessageInstance?.author?.id}" class="many-to-one"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: tekMessageInstance, field: 'event', 'error')} required">
@@ -40,5 +44,6 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="event" name="event.id" from="${com.tekdays.TekEvent.list()}" optionKey="id" required="" value="${tekMessageInstance?.event?.id}" class="many-to-one"/>
+
 </div>
 

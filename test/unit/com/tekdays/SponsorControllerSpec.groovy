@@ -36,6 +36,7 @@ class SponsorControllerSpec extends Specification {
     void "Test the save action correctly persists an instance"() {
 
         when:"The save action is executed with an invalid instance"
+            request.contentType = FORM_CONTENT_TYPE
             def sponsor = new Sponsor()
             sponsor.validate()
             controller.save(sponsor)
@@ -91,6 +92,7 @@ class SponsorControllerSpec extends Specification {
 
     void "Test the update action performs an update on a valid domain instance"() {
         when:"Update is called for a domain instance that doesn't exist"
+            request.contentType = FORM_CONTENT_TYPE
             controller.update(null)
 
         then:"A 404 error is returned"
@@ -121,6 +123,7 @@ class SponsorControllerSpec extends Specification {
 
     void "Test that the delete action deletes an instance if it exists"() {
         when:"The delete action is called for a null instance"
+            request.contentType = FORM_CONTENT_TYPE
             controller.delete(null)
 
         then:"A 404 is returned"

@@ -8,6 +8,7 @@
 		
 	</label>
 	<g:textField name="fullName" value="${tekUserInstance?.fullName}"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: tekUserInstance, field: 'userName', 'error')} ">
@@ -16,6 +17,7 @@
 		
 	</label>
 	<g:textField name="userName" value="${tekUserInstance?.userName}"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: tekUserInstance, field: 'email', 'error')} ">
@@ -24,6 +26,7 @@
 		
 	</label>
 	<g:textField name="email" value="${tekUserInstance?.email}"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: tekUserInstance, field: 'website', 'error')} ">
@@ -32,6 +35,7 @@
 		
 	</label>
 	<g:textField name="website" value="${tekUserInstance?.website}"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: tekUserInstance, field: 'bio', 'error')} ">
@@ -40,6 +44,7 @@
 		
 	</label>
 	<g:textArea name="bio" cols="40" rows="5" maxlength="5000" value="${tekUserInstance?.bio}"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: tekUserInstance, field: 'password', 'error')} ">
@@ -48,5 +53,6 @@
 		
 	</label>
 	<g:textField name="password" value="${tekUserInstance?.password}"/>
+
 </div>
 

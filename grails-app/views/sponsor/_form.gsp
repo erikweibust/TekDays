@@ -8,6 +8,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="name" required="" value="${sponsorInstance?.name}"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: sponsorInstance, field: 'website', 'error')} required">
@@ -16,6 +17,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:field type="url" name="website" required="" value="${sponsorInstance?.website}"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: sponsorInstance, field: 'description', 'error')} ">
@@ -24,6 +26,7 @@
 		
 	</label>
 	<g:textArea name="description" cols="40" rows="5" maxlength="5000" value="${sponsorInstance?.description}"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: sponsorInstance, field: 'logo', 'error')} ">
@@ -32,6 +35,7 @@
 		
 	</label>
 	<input type="file" id="logo" name="logo" />
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: sponsorInstance, field: 'sponsorships', 'error')} ">
@@ -48,6 +52,7 @@
 <g:link controller="sponsorship" action="create" params="['sponsor.id': sponsorInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'sponsorship.label', default: 'Sponsorship')])}</g:link>
 </li>
 </ul>
+
 
 </div>
 
